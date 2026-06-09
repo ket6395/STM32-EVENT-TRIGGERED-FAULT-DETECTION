@@ -176,7 +176,7 @@ The embedded implementation demonstrates that event-triggered execution can sign
 
 ## STM32 Runtime Results
 
-![STM32 Runtime Results](stm32_runtime_results.png)
+![STM32 Runtime Results](metrics_keil.png)
 
 ---
 
