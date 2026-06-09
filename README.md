@@ -1,8 +1,11 @@
-# STM32-Based Event-Triggered Real-Time Monitoring and Fault Detection System
+## Event-Triggered Real-Time Monitoring and Fault Detection System using STM32
+
 ## Overview
+
 This project demonstrates the design, simulation, and embedded implementation of an Event-Triggered Monitoring and Fault Detection System.
-The workflow begins with MATLAB-based validation of an event-triggered control strategy and is then deployed on an STM32F412ZG microcontroller using Embedded C.
-Unlike conventional periodic execution, computations are performed only when significant changes occur, reducing unnecessary processing while maintaining system performance.
+The workflow begins with MATLAB-based validation of an event-triggered monitoring strategy and is subsequently deployed on an STM32F412ZG microcontroller using Embedded C.
+
+Unlike conventional periodic execution, computations are performed only when significant changes occur, reducing unnecessary processing while maintaining monitoring and fault detection performance.
 
 ---
 
@@ -26,11 +29,11 @@ Fault Detection & State Indication
 
 ---
 
-## MATLAB Validation
+# MATLAB Validation
 
 The event-triggered algorithm was first validated in MATLAB using a state-space plant model with communication delay and injected disturbances.
 
-### Simulation Features
+## Simulation Features
 
 - Event-triggered control
 - Periodic control comparison
@@ -40,7 +43,7 @@ The event-triggered algorithm was first validated in MATLAB using a state-space 
 - Event execution statistics
 - Inter-event interval analysis
 
-### System Parameters
+## System Parameters
 
 | Parameter | Value |
 |------------|---------|
@@ -108,27 +111,92 @@ The event-triggered controller successfully maintained system stability while re
 
 ---
 
-## STM32 Hardware Implementation
+# STM32 Hardware Implementation
 
-The validated MATLAB algorithm was deployed on an STM32F412ZG microcontroller using Embedded C.
+The validated MATLAB event-triggered monitoring algorithm was deployed on an STM32F412ZG microcontroller using STM32CubeMX, Keil MDK, and Embedded C.
 
-### Implemented Features
+## Hardware and Software Platform
+
+| Component | Description |
+|------------|------------|
+| Microcontroller | STM32F412ZG |
+| Development Environment | Keil MDK |
+| Configuration Tool | STM32CubeMX |
+| Programming Interface | ST-Link |
+| Serial Monitoring | PuTTY |
+| Language | Embedded C |
+
+---
+
+## Implemented Features
 
 - Internal temperature sensor acquisition
 - Event-triggered scheduling
 - Temperature change detection (ΔT)
 - Moving average computation
-- Variance calculation
-- Fault counting
-
-
-
----
-
+- Variance estimation
+- Fault detection logic
+- Fault occurrence counting
+- UART-based real-time monitoring
+- CPU utilization reduction analysis
 
 ---
 
+## Real-Time Monitoring Variables
 
+| Variable | Description |
+|-----------|-------------|
+| temperature | Measured internal temperature |
+| deltaT | Temperature variation between samples |
+| moving_avg | Running average temperature |
+| variance | Temperature variance |
+| event_count | Number of triggered events |
+| event_rate | Percentage of event-triggered executions |
+| cpu_reduction | Estimated CPU utilization reduction |
+| window_cpu_reduction | CPU reduction over observation window |
+| fault_count | Total detected faults |
+| system_state | Current operating state |
+
+---
+
+## STM32 Experimental Results
+
+| Metric | Value |
+|---------|---------|
+| Event Count | 24 |
+| Event Rate | 21.81 % |
+| CPU Reduction | 78.18 % |
+| Window CPU Reduction | 81 % |
+| Fault Count | 4 |
+| System State | Normal Operation |
+
+The embedded implementation demonstrates that event-triggered execution can significantly reduce computational activity while maintaining continuous monitoring and fault detection capability.
+
+---
+
+## STM32 Runtime Results
+
+![STM32 Runtime Results](stm32_runtime_results.png)
+
+---
+
+## Embedded Workflow
+
+```text
+MATLAB Design
+      ↓
+Algorithm Validation
+      ↓
+Performance Analysis
+      ↓
+Embedded C Implementation
+      ↓
+STM32 Deployment
+      ↓
+UART Monitoring
+      ↓
+Real-Time Fault Detection
+```
 
 ---
 
@@ -137,7 +205,13 @@ The validated MATLAB algorithm was deployed on an STM32F412ZG microcontroller us
 ```text
 STM32-EVENT-TRIGGERED-FAULT-DETECTION
 │
-├── event_triggered.m
+├── MATLAB/
+│   └── event_triggered.m
+│
+├── STM32_Keil/
+│   ├── Core/
+│   └── EventTriggered_Int.ioc
+│
 ├── Results.png
 ├── Event Triggering condition with disturbance.png
 ├── Event Triggered VS Periodic Control.png
@@ -145,18 +219,24 @@ STM32-EVENT-TRIGGERED-FAULT-DETECTION
 ├── Event Distribution over time.png
 ├── System Health Monitoring.png
 ├── Fault Detection Timeline.png
+├── stm32_runtime_results.png
+│
 └── README.md
 ```
 
 ---
 
 ## Tools and Technologies
-- MATLAB
-- State-Space Modelling
-- Event-Triggered Control
-- Fault Detection
-- Real-Time Monitoring
 
+- MATLAB
+- STM32CubeMX
+- Keil MDK
+- Embedded C
+- UART Communication
+- PuTTY
+- Event-Triggered Monitoring
+- Fault Detection
+- Real-Time Embedded Systems
 
 ---
 
@@ -170,3 +250,8 @@ STM32-EVENT-TRIGGERED-FAULT-DETECTION
 
 ---
 
+## Author
+
+Ketan Bathla  
+M.Tech Cyber-Physical Systems  
+Indian Institute of Technology Jodhpur
