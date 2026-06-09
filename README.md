@@ -248,10 +248,7 @@ STM32-EVENT-TRIGGERED-FAULT-DETECTION
 - FreeRTOS integration
 - Real-time dashboard visualization
 
----
+## Applications
 
-## Author
+This event-triggered monitoring framework is applicable to automotive systems, industrial automation, IoT devices, and cyber-physical systems where real-time fault detection and efficient resource utilization are required. By reducing unnecessary computations while maintaining monitoring performance, the approach is well suited for embedded platforms with limited processing and power resources.
 
-Ketan Bathla  
-M.Tech Cyber-Physical Systems  
-Indian Institute of Technology Jodhpur
