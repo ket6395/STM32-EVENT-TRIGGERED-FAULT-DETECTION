@@ -1,0 +1,28 @@
+--cpu=Cortex-M4.fp.sp
+"eventtriggerd_int\startup_stm32f412zx.o"
+"eventtriggerd_int\main.o"
+"eventtriggerd_int\stm32f4xx_it.o"
+"eventtriggerd_int\stm32f4xx_hal_msp.o"
+"eventtriggerd_int\stm32f4xx_hal_adc.o"
+"eventtriggerd_int\stm32f4xx_hal_adc_ex.o"
+"eventtriggerd_int\stm32f4xx_hal_rcc.o"
+"eventtriggerd_int\stm32f4xx_hal_rcc_ex.o"
+"eventtriggerd_int\stm32f4xx_hal_flash.o"
+"eventtriggerd_int\stm32f4xx_hal_flash_ex.o"
+"eventtriggerd_int\stm32f4xx_hal_flash_ramfunc.o"
+"eventtriggerd_int\stm32f4xx_hal_gpio.o"
+"eventtriggerd_int\stm32f4xx_hal_dma_ex.o"
+"eventtriggerd_int\stm32f4xx_hal_dma.o"
+"eventtriggerd_int\stm32f4xx_hal_pwr.o"
+"eventtriggerd_int\stm32f4xx_hal_pwr_ex.o"
+"eventtriggerd_int\stm32f4xx_hal_cortex.o"
+"eventtriggerd_int\stm32f4xx_hal.o"
+"eventtriggerd_int\stm32f4xx_hal_exti.o"
+"eventtriggerd_int\stm32f4xx_hal_tim.o"
+"eventtriggerd_int\stm32f4xx_hal_tim_ex.o"
+"eventtriggerd_int\stm32f4xx_hal_uart.o"
+"eventtriggerd_int\system_stm32f4xx.o"
+--strict --scatter "EventTriggerd_Int\EventTriggerd_Int.sct"
+--summary_stderr --info summarysizes --map --load_addr_map_info --xref --callgraph --symbols
+--info sizes --info totals --info unused --info veneers
+--list "EventTriggerd_Int.map" -o EventTriggerd_Int\EventTriggerd_Int.axf
